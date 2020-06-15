@@ -250,27 +250,8 @@ resource "aws_cloudfront_distribution" "tf_cloudfront" {
    ]
 
 }
-/*
-   connection {
-  type = "ssh"
-  user = "ec2-user"
- // private_key = " file(C:/Users/User/Downloads/task1_key.pem)"
-  private_key = tls_private_key.example.private_key_pem
-  host = aws_instance.mytask1instance.public_ip
- }
 
 
-
-provisioner "remote-exec" {
-   inline = [
-           "sudo su << EOF",
-           " echo \"<img src='http://${self.domain_name}/${aws_s3_bucket_object.terraobject.key}' width='500' height='500'>\" >> /var/www/html/task1_3.jpeg",
-           "EOF"
-        ]
-      }
- }
-
-*/
 
 resource "null_resource" "nullremote"  {
   depends_on = [
